@@ -20,6 +20,10 @@
     "import/extensions":"off",
     "no-console":"off",
     "class-methods-use-this":"off",
-    "no-unused-vars":"off"
+    "no-unused-vars":"off",
+    "no-useless-constructor":"off",
+    "no-empty-function":"off",
+    "no-plusplus":"off",
+    "consistent-return":"off"
   }
 }

@@ -1805,6 +1805,11 @@ color-name@~1.1.4:
   resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
+colors@1.4.0, colors@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
+  integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
+
 commander@^4.0.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
@@ -1917,6 +1922,11 @@ date-fns@^2.27.0:
   version "2.27.0"
   resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.27.0.tgz"
   integrity sha512-sj+J0Mo2p2X1e306MHq282WS4/A8Pz/95GIFcsPNMPMZVI3EUrAdSv90al1k+p74WGLCruMXk23bfEDZa71X9Q==
+
+dateformat@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-4.5.1.tgz#c20e7a9ca77d147906b6dc2261a8be0a5bd2173c"
+  integrity sha512-OD0TZ+B7yP7ZgpJf5K2DIbj3FZvFvxgFUuaqA/V5zTjAtAAXZ1E8bktHxmAGs4x5b7PflqA9LeQ84Og7wYtF7Q==
 
 debug@2.6.9, debug@^2.6.9:
   version "2.6.9"
@@ -4510,6 +4520,11 @@ through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
+tinytim@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/tinytim/-/tinytim-0.1.1.tgz#c968a1e5559ad9553224ef7627bab34e3caef8a8"
+  integrity sha1-yWih5VWa2VUyJO92J7qzTjyu+Kg=
+
 title-case@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/title-case/-/title-case-3.0.3.tgz#bc689b46f02e411f1d1e1d081f7c3deca0489982"
@@ -4540,6 +4555,16 @@ toidentifier@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
+
+tracer@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/tracer/-/tracer-1.1.5.tgz#f53f761ed53c586a6c1d161581057c86780fa87d"
+  integrity sha512-I7/AwGm/gf3KU7DcltmSmKJbytQj3q4hg+JKadtIKocfvBY4olY4SV8rAoMRvAD60gPlggEJ1QoSlb2dQtWHNw==
+  dependencies:
+    colors "1.4.0"
+    dateformat "4.5.1"
+    mkdirp "^1.0.4"
+    tinytim "0.1.1"
 
 tree-kill@^1.2.2:
   version "1.2.2"

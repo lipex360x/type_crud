@@ -5,6 +5,8 @@ import 'express-async-errors'
 import { errors } from 'celebrate'
 import cors from 'cors'
 
+import '@shared/infra/typeorm'
+
 import routerError from '@shared/errors/RouterError'
 import routes from '@shared/infra/http/routes'
 
