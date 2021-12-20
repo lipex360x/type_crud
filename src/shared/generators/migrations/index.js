@@ -5,7 +5,7 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'Type migration name:',
-      validate: value => {
+      validate: (value) => {
         if (!value) {
           return 'Name is required'
         }
@@ -16,10 +16,10 @@ module.exports = {
     {
       type: 'input',
       name: 'database',
-      message: 'Type database name:',
-      validate: value => {
+      message: 'Type table name:',
+      validate: (value) => {
         if (!value) {
-          return 'Name is required'
+          return 'Table Name is required'
         }
         return true
       }
@@ -38,8 +38,8 @@ module.exports = {
     }
   ],
 
-  actions: data => {
-    const migration = 'migration' + data.type
+  actions: (data) => {
+    const migration = `migration${data.type}`
 
     const actions = [
       {

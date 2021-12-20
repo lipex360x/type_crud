@@ -17,6 +17,7 @@
   "rules": {
     "semi":"off",
     "import/no-unresolved":"off",
+    "comma-dangle":"off",
     "import/extensions":"off",
     "no-console":"off",
     "class-methods-use-this":"off",
