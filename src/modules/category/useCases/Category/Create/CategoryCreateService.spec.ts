@@ -29,6 +29,8 @@ describe('Category', () => {
 
     await categoryCreateService.execute(category)
 
-    await expect(categoryCreateService.execute(category)).rejects.toBeInstanceOf(AppError)
+    await expect(
+      categoryCreateService.execute(category)
+    ).rejects.toBeInstanceOf(AppError)
   })
 })
