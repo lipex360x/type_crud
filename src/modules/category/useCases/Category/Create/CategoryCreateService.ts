@@ -19,7 +19,7 @@ export default class CreateCategoryService {
   async execute({ name, description }: Request): Promise<Category> {
     const getCategory = await this.repository.findByName({ name })
 
-    if (getCategory) throw new AppError('User is already exists')
+    if (getCategory) throw new AppError('Category is already exists')
 
     const category = await this.repository.create({ name, description })
 

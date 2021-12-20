@@ -7,6 +7,6 @@ const router = Router()
 
 const createCategoryController = new CreateCategoryController()
 
-router.post('/', createCategoryController.create)
+router.post('/', createCategoryController.handle)
 
 export default router

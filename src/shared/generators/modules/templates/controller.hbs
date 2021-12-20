@@ -1,7 +1,6 @@
 // snippet: controllerTemplate
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
-import { classToClass } from 'class-transformer'
 
 import Create{{pascalCase name}}Service from '@modules/{{camelCase name}}/useCases/{{pascalCase name}}/Create/{{pascalCase name}}CreateService'
 
@@ -13,6 +12,6 @@ export default class Create{{pascalCase name}}Controller {
 
     const create{{pascalCase name}}Service = await service.execute({ props })
 
-    return response.json(classToClass(create{{pascalCase name}}Service))
+    return response.json(create{{pascalCase name}}Service)
   }
 }

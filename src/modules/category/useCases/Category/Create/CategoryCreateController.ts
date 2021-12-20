@@ -1,18 +1,16 @@
-// snippet: controllerTemplate
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
-import { classToClass } from 'class-transformer'
 
 import CreateCategoryService from '@modules/category/useCases/Category/Create/CategoryCreateService'
 
 export default class CreateCategoryController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { props } = request.body
+    const { name, description } = request.body
 
     const service = container.resolve(CreateCategoryService)
 
-    const createCategoryService = await service.execute({ props })
+    const createCategoryService = await service.execute({ name, description })
 
-    return response.json(classToClass(createCategoryService))
+    return response.json(createCategoryService)
   }
 }
