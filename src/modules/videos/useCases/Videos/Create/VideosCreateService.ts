@@ -10,12 +10,12 @@ interface Request{
 
 @injectable()
 export default class CreateVideosService {
-  constructor (
+  constructor(
     @inject('VideosRepository')
     private repository: IVideosRepository
   ) {}
 
-  async execute ({ data }: Request): Promise<Videos> {
+  async execute({ data }: Request): Promise<Videos> {
     // To Do
   }
 }

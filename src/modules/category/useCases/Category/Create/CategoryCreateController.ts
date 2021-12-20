@@ -6,7 +6,7 @@ import { classToClass } from 'class-transformer'
 import CreateCategoryService from '@modules/category/useCases/Category/Create/CategoryCreateService'
 
 export default class CreateCategoryController {
-  async handle (request: Request, response: Response): Promise<Response> {
+  async handle(request: Request, response: Response): Promise<Response> {
     const { props } = request.body
 
     const service = container.resolve(CreateCategoryService)

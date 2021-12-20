@@ -7,16 +7,28 @@ import CategoryCreateService from './CategoryCreateService'
 let fakecategoryRepository: FakeCategoryRepository
 let categoryCreateService: CategoryCreateService
 
-describe('TEST_NAME ', () => {
+describe('Category', () => {
   beforeEach(() => {
     fakecategoryRepository = new FakeCategoryRepository()
     categoryCreateService = new CategoryCreateService(fakecategoryRepository)
   })
 
   it('should be able to create a new category', async () => {
-    const props = null
-    const test = await categoryCreateService.execute({ props })
+    const name = Faker.name.firstName()
+    const description = Faker.lorem.words(3)
+    const category = await categoryCreateService.execute({ name, description })
 
-    expect(test).toHaveProperty('VALUE')
+    expect(category).toHaveProperty('id')
+  })
+
+  it('should not able to create a duplicate category', async () => {
+    const category = {
+      name: Faker.name.firstName(),
+      description: Faker.lorem.words(3)
+    }
+
+    await categoryCreateService.execute(category)
+
+    await expect(categoryCreateService.execute(category)).rejects.toBeInstanceOf(AppError)
   })
 })

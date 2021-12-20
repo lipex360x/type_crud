@@ -7,7 +7,7 @@ import VideosCreateService from './VideosCreateService'
 let fakevideosRepository: FakeVideosRepository
 let videosCreateService: VideosCreateService
 
-describe('TEST_NAME ', () => {
+describe('Videos ', () => {
   beforeEach(() => {
     fakevideosRepository = new FakeVideosRepository()
     videosCreateService = new VideosCreateService(fakevideosRepository)
