@@ -18,6 +18,8 @@
     "semi":"off",
     "import/no-unresolved":"off",
     "import/extensions":"off",
-    "no-console":"off"
+    "no-console":"off",
+    "class-methods-use-this":"off",
+    "no-unused-vars":"off"
   }
 }

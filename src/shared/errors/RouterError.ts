@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import AppError from '@shared/errors/AppError'
 
 class RouterError {
-  async execute (err: Error, request: Request, response: Response, _: NextFunction) {
+  async execute(err: Error, request: Request, response: Response, _: NextFunction) {
     if (err instanceof AppError) {
       return response
         .status(err.statusCode)
@@ -12,7 +12,7 @@ class RouterError {
     console.error(err)
     return response.status(500).json({
       status: 'error',
-      message: 'Internal server error'
+      message: 'Internal server error',
     })
   }
 }
