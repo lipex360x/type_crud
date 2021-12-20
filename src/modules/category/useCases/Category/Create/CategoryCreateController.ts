@@ -1,16 +1,16 @@
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
-import CreateCategoryService from '@modules/category/useCases/Category/Create/CategoryCreateService'
+import CategoryCreateService from '@modules/category/useCases/Category/Create/CategoryCreateService'
 
 export default class CreateCategoryController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { name, description } = request.body
 
-    const service = container.resolve(CreateCategoryService)
+    const service = container.resolve(CategoryCreateService)
 
-    const createCategoryService = await service.execute({ name, description })
+    const categoryCreateService = await service.execute({ name, description })
 
-    return response.json(createCategoryService)
+    return response.json(categoryCreateService)
   }
 }

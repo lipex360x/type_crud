@@ -2,16 +2,16 @@
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
-import Create{{pascalCase name}}Service from '@modules/{{camelCase name}}/useCases/{{pascalCase name}}/Create/{{pascalCase name}}CreateService'
+import {{pascalCase name}}CreateService from '@modules/{{camelCase name}}/useCases/{{pascalCase name}}/Create/{{pascalCase name}}CreateService'
 
 export default class Create{{pascalCase name}}Controller {
   async handle (request: Request, response: Response): Promise<Response> {
     const { props } = request.body
 
-    const service = container.resolve(Create{{pascalCase name}}Service)
+    const service = container.resolve({{pascalCase name}}CreateService)
 
-    const create{{pascalCase name}}Service = await service.execute({ props })
+    const {{name}}CreateService = await service.execute({ props })
 
-    return response.json(create{{pascalCase name}}Service)
+    return response.json({{name}}CreateService)
   }
 }
