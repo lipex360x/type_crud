@@ -10,13 +10,16 @@ import {
   DeleteDateColumn
 } from 'typeorm'
 
-@Entity('{{camelCase name}}s')
-export default class {{pascalCase name}} {
+@Entity('categories')
+export default class Category {
   @PrimaryColumn('uuid')
     id: string
 
   @Column()
-    data: string
+    name: string
+
+  @Column()
+    description: string
 
   @CreateDateColumn()
     created_at: Date
@@ -28,7 +31,7 @@ export default class {{pascalCase name}} {
     deleted_at: Date
 
   @BeforeInsert()
-  userProps (): void {
+  userProps(): void {
     this.id = uuid()
   }
 }
