@@ -27,4 +27,8 @@ export default class FakeCategoryRepository implements ICategoryRepository {
 
     return getCategory
   }
+
+  async findAll(): Promise<Category[]> {
+    return this.repository
+  }
 }

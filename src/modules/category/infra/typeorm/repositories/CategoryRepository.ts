@@ -21,4 +21,8 @@ export default class CategoryRepository implements ICategoryRepository {
   async findByName({ name }: FindByNameProps): Promise<Category> {
     return this.repository.findOne({ name })
   }
+
+  async findAll(): Promise<Category[]> {
+    return this.repository.find()
+  }
 }

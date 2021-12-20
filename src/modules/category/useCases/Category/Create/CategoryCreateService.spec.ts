@@ -7,7 +7,7 @@ import CategoryCreateService from './CategoryCreateService'
 let fakecategoryRepository: FakeCategoryRepository
 let categoryCreateService: CategoryCreateService
 
-describe('Category', () => {
+describe('Category Create', () => {
   beforeEach(() => {
     fakecategoryRepository = new FakeCategoryRepository()
     categoryCreateService = new CategoryCreateService(fakecategoryRepository)

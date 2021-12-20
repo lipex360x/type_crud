@@ -12,4 +12,5 @@ export interface FindByNameProps {
 export default interface ICategoryRepository {
   create(data: CreateProps): Promise<Category>
   findByName(data: FindByNameProps): Promise<Category>
+  findAll(): Promise<Category[]>
 }
