@@ -6,7 +6,6 @@ import {
   PrimaryColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  BeforeInsert,
   DeleteDateColumn
 } from 'typeorm'
 
@@ -30,8 +29,7 @@ export default class Category {
   @DeleteDateColumn()
     deleted_at: Date
 
-  @BeforeInsert()
-  userProps(): void {
-    this.id = uuid()
+  constructor() {
+    if (!this.id) this.id = uuid()
   }
 }

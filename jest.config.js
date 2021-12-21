@@ -6,14 +6,12 @@ module.exports = {
   clearMocks: true,
   collectCoverage: true,
 
-  collectCoverageFrom: [
-    '<rootDir>/src/modules/**/services/**/*.ts',
-    '<rootDir>/src/shared/middlewares/**/services/**/*.ts'
-  ],
+  // collectCoverageFrom: [
+  //   '<rootDir>/src/modules/**/useCases/**/**/*.ts'
+  //   '<rootDir>/src/shared/middlewares/**/useCases/**/*.ts}'
+  // ],
   coverageDirectory: 'coverage',
-  coveragePathIgnorePatterns: [
-    '/node_modules/'
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 
   coverageReporters: [
     'text-summary',
