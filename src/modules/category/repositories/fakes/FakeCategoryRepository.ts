@@ -5,7 +5,8 @@ import ICategoryRepository, {
   CreateProps,
   DeleteProps,
   FindByNameProps,
-  FindByIdProps
+  FindByIdProps,
+  UpdateProps
 } from '../interfaces/ICategoryRepository'
 
 export default class FakeCategoryRepository implements ICategoryRepository {
@@ -43,5 +44,13 @@ export default class FakeCategoryRepository implements ICategoryRepository {
 
   async findById({ id }: FindByIdProps): Promise<Category> {
     return this.repository.find((category) => category.id === id)
+  }
+
+  async update({ category }: UpdateProps): Promise<Category> {
+    const getIndex = this.repository.findIndex((getCategory) => getCategory.id === category.id)
+
+    this.repository[getIndex] = category
+
+    return category
   }
 }

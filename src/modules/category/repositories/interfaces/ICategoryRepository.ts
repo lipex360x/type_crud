@@ -13,6 +13,10 @@ export interface FindByIdProps {
   id: string
 }
 
+export interface UpdateProps {
+  category: Category
+}
+
 export interface DeleteProps {
   id: string
 }
@@ -22,5 +26,6 @@ export default interface ICategoryRepository {
   findById(data: FindByIdProps): Promise<Category>
   findByName(data: FindByNameProps): Promise<Category>
   findAll(): Promise<Category[]>
+  update(data: UpdateProps): Promise<Category>
   delete(data: DeleteProps): Promise<void>
 }

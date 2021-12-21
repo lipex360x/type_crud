@@ -3,8 +3,8 @@ import Faker from 'faker'
 
 import FakeCategoryRepository from '@modules/category/repositories/fakes/FakeCategoryRepository'
 import CategoryCreateService from '../Create/CategoryCreateService'
-import CategoryIndexService from '../Index/CategoryIndexService'
 import CategoryDeleteService from './CategoryDeleteService'
+import CategoryIndexService from '../Index/CategoryIndexService'
 
 let fakecategoryRepository: FakeCategoryRepository
 let categoryDeleteService: CategoryDeleteService
