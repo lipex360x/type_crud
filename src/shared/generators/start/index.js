@@ -63,11 +63,6 @@ module.exports = {
 
       {
         type: 'add',
-        path: '../../../ormconfig.json',
-        templateFile: './start/templates/ormconfig.hbs'
-      },
-      {
-        type: 'add',
         path: '../../../docker-compose.yml',
         templateFile: './start/templates/docker-compose.hbs'
       }
