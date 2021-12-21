@@ -5,7 +5,7 @@ import Category from '@modules/category/infra/typeorm/entities/Category'
 import ICategoryRepository from '@modules/category/repositories/interfaces/ICategoryRepository'
 
 interface Request{
-  data: string
+  id: string
 }
 
 @injectable()
@@ -15,7 +15,11 @@ export default class CategoryShowService {
     private repository: ICategoryRepository
   ) {}
 
-  async execute({ data }: Request): Promise<Category> {
-    // To Do
+  async execute({ id }: Request): Promise<Category> {
+    const getCategory = await this.repository.findById({ id })
+
+    if (!getCategory) throw new AppError('Category not found')
+
+    return getCategory
   }
 }

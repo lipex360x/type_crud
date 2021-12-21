@@ -7,15 +7,15 @@ import CategoryDeleteService from './CategoryDeleteService'
 import CategoryIndexService from '../Index/CategoryIndexService'
 
 let fakecategoryRepository: FakeCategoryRepository
-let categoryDeleteService: CategoryDeleteService
 let categoryCreateService: CategoryCreateService
+let categoryDeleteService: CategoryDeleteService
 let categoryIndexService: CategoryIndexService
 
 describe('Category Delete', () => {
   beforeEach(() => {
     fakecategoryRepository = new FakeCategoryRepository()
-    categoryDeleteService = new CategoryDeleteService(fakecategoryRepository)
     categoryCreateService = new CategoryCreateService(fakecategoryRepository)
+    categoryDeleteService = new CategoryDeleteService(fakecategoryRepository)
     categoryIndexService = new CategoryIndexService(fakecategoryRepository)
   })
 

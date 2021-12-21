@@ -5,11 +5,11 @@ import CategoryShowService from './CategoryShowService'
 
 export default class CategoryShowController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { props } = request.body
+    const { id } = request.params
 
     const service = container.resolve(CategoryShowService)
 
-    const categoryCreateService = await service.execute({ props })
+    const categoryCreateService = await service.execute({ id })
 
     return response.json(categoryCreateService)
   }
