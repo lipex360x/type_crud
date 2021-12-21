@@ -1,7 +1,12 @@
 import { v4 as uuid } from 'uuid'
 
 import Category from '@modules/category/infra/typeorm/entities/Category'
-import ICategoryRepository, { CreateProps, FindByNameProps } from '../interfaces/ICategoryRepository'
+import ICategoryRepository, {
+  CreateProps,
+  DeleteProps,
+  FindByNameProps,
+  FindByIdProps
+} from '../interfaces/ICategoryRepository'
 
 export default class FakeCategoryRepository implements ICategoryRepository {
   private repository: Category[] = []
@@ -30,5 +35,13 @@ export default class FakeCategoryRepository implements ICategoryRepository {
 
   async findAll(): Promise<Category[]> {
     return this.repository
+  }
+
+  async delete({ id }: DeleteProps): Promise<void> {
+    this.repository = this.repository.filter((category) => category.id !== id)
+  }
+
+  async findById({ id }: FindByIdProps): Promise<Category> {
+    return this.repository.find((category) => category.id === id)
   }
 }

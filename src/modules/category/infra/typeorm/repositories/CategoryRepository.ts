@@ -1,7 +1,9 @@
 import { Repository, getRepository } from 'typeorm'
 
 import Category from '@modules/category/infra/typeorm/entities/Category'
-import ICategoryRepository, { CreateProps, FindByNameProps } from '@modules/category/repositories/interfaces/ICategoryRepository'
+import ICategoryRepository, {
+  CreateProps, DeleteProps, FindByIdProps, FindByNameProps
+} from '@modules/category/repositories/interfaces/ICategoryRepository'
 
 export default class CategoryRepository implements ICategoryRepository {
   private repository: Repository<Category>
@@ -24,5 +26,13 @@ export default class CategoryRepository implements ICategoryRepository {
 
   async findAll(): Promise<Category[]> {
     return this.repository.find()
+  }
+
+  async findById({ id }: FindByIdProps): Promise<Category> {
+    return this.repository.findOne(id)
+  }
+
+  async delete({ id }: DeleteProps): Promise<void> {
+    await this.repository.delete({ id })
   }
 }
