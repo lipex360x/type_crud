@@ -441,6 +441,25 @@
       ]
     },
   
+
+    "Plop Prompt Template": {
+      "prefix": "promptTemplate",
+      "body": [
+        "{",
+        "  type: 'input',",
+        "  name: '${1:NAME}',",
+        "  message: '${2:Text}',",
+        "  default: 'Default_Value',",
+        "  validate: (value) => {",
+        "    if (!value) {",
+        "      return '${1:NAME} is required'",
+        "    }",
+        "    return true",
+        "  }",
+        "}"
+      ]
+    },
+    
     "Test Spec Template": {
       "prefix": "testTemplate",
       "body": [
