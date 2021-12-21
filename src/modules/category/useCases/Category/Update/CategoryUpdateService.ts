@@ -18,13 +18,13 @@ export default class CategoryUpdateService {
   ) {}
 
   async execute({ id, name, description }: Request): Promise<Category> {
-    const getCategoryByName = await this.repository.findByName({ name })
-
-    if (getCategoryByName) throw new AppError('Category is already exists')
-
     const getCategoryById = await this.repository.findById({ id })
 
     if (!getCategoryById) throw new AppError('Category not found')
+
+    const getCategoryByName = await this.repository.findByName({ name })
+
+    if (getCategoryByName) throw new AppError('Category is already exists')
 
     getCategoryById.name = name || getCategoryById.name
     getCategoryById.description = description || getCategoryById.description
