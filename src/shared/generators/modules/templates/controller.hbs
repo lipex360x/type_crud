@@ -1,17 +1,16 @@
-// snippet: controllerTemplate
 import { Request, Response } from 'express'
 import { container } from 'tsyringe'
 
-import {{pascalCase name}}CreateService from './{{pascalCase name}}CreateService'
+import {{pascalCase useCaseName}}{{pascalCase actionName}}Service from './{{pascalCase useCaseName}}{{pascalCase actionName}}.service'
 
-export default class {{pascalCase name}}CreateController {
+export default class {{pascalCase useCaseName}}{{pascalCase actionName}}Controller {
   async handle (request: Request, response: Response): Promise<Response> {
     const { props } = request.body
 
-    const service = container.resolve({{pascalCase name}}CreateService)
+    const service = container.resolve({{pascalCase useCaseName}}{{pascalCase actionName}}Service)
 
-    const {{name}}CreateService = await service.execute({ props })
+    const serviceResponse = await service.execute({ props })
 
-    return response.json({{name}}CreateService)
+    return response.json(serviceResponse)
   }
 }

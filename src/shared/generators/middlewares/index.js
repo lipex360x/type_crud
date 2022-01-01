@@ -5,36 +5,34 @@
 // const { capitalize } = require('../_utils/textTransform')
 
 module.exports = {
-  description: 'Generate a {{pascalCase name }}',
+  description: 'Generate a Middlewares',
   prompts: [
     {
       type: 'input',
-      name: 'fileName',
-      message: 'File Name',
-      // default: 'test',
+      name: 'name',
+      message: 'Middleware Name',
       validate: (value) => {
-        if (!value) return 'Value is required'
-        
+        if (!value) {
+          return 'Value is required'
+        }
         return true
       }
     }
 
-    // snippet: plopPromptTemplate
+    // snippet: promptTemplate
   ],
 
   actions: (data) => {
-    const pathTemplate = './{{ name }}/templates'
+    const pathTemplate = './middlewares/templates'
 
     const files = [
       {
         data: {},
-        path: '../../xxx',
-        name: 'fileName.ts',
-        template: '{{ name }}.hbs',
+        path: '../../shared/middlewares/{{name}}',
+        name: 'index.ts',
+        template: 'middleware.hbs',
         force: false
       }
-
-      // snippet: plopFilesTemplate
     ]
 
     // Create Files
@@ -53,7 +51,7 @@ module.exports = {
     })
 
     // Message
-    const message = () => (`Module ${data.moduleName} created`)
+    const message = () => `Middleware ${data.moduleName} created`
     action.push(message)
 
     return action

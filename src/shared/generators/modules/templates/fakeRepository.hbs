@@ -1,24 +1,20 @@
-import { v4 as uuid } from 'uuid'
+import {{pascalCase entityName}} from '@modules/{{camelCase moduleName}}/infra/typeorm/entities/{{pascalCase entityName}}.entity'
+import I{{pascalTableName}}, { CreateProps } from '@modules/{{camelCase moduleName}}/repositories/interfaces/I{{pascalTableName}}.interface'
 
-import {{pascalCase name}} from '@modules/{{camelCase name}}/infra/typeorm/entities/{{pascalCase name}}'
-import I{{pascalCase name}}Repository, { CreateProps } from '../interfaces/I{{pascalCase name}}Repository'
+export default class Fake{{pascalCase moduleName}}Repository implements I{{pascalTableName}} {
+  private repository: {{pascalCase entityName}}[] = []
 
-export default class Fake{{pascalCase name}}Repository implements I{{pascalCase name}}Repository {
-  private repository: {{pascalCase name}}[] = []
+  async create ({ data }:CreateProps): Promise<{{pascalCase entityName}}> {
+    const {{camelCase entityName}} = new {{pascalCase entityName}}()
 
-  async create ({ data }:CreateProps): Promise<{{pascalCase name}}> {
-    const entity_data = new {{pascalCase name}}()
-
-    Object.assign(entity_data, {
-      id: uuid(),
-      {...}
+    Object.assign({{camelCase entityName}}, {
       data,
       created_at: new Date(),
       updated_at: new Date()
     })
 
-    this.repository.push(entity_data)
+    this.repository.push({{camelCase entityName}})
 
-    return entity_data
+    return {{camelCase entityName}}
   }
 }
